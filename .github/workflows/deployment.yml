@@ -28,7 +28,7 @@ jobs:
           context: .
           push: true
           tags: |
-            patienceineza/web-${{ github.sha }}  # Unique tag based on commit SHA
-            patienceineza/web:latest             # Tag for the latest version
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
+            patienceineza/web:${{ github.sha }}
+            patienceineza/web:latest
+          cache-from: type=registry,ref=patienceineza/web:latest
+          cache-to: type=inline,mode=max
