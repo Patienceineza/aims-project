@@ -28,6 +28,6 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: patienceineza/patienceineza:latest, patienceineza/patienceineza:${{ github.sha }}
+          tags: patienceineza/website:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
