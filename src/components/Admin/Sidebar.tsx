@@ -46,61 +46,61 @@ const Sidebar = () => {
       current: location.pathname === "/account/users",
       roles: ["ADMIN"],
     },
-    {
-      name: t("navigation.categories"),
-      to: "/account/category",
-      icon: IconListCheck,
-      current: location.pathname === "/account/category",
-      roles: ["CASHIER", "ADMIN", "MANAGER"],
-    },
-    {
-      name: t("navigation.products"),
-      to: "/account/products",
-      icon: IconTag,
-      current: location.pathname === "/account/products",
-      roles: ["CASHIER", "ADMIN", "MANAGER"],
-    },
-    {
-      name: t("navigation.pos"),
-      to: "",
-      icon: IconBarChart,
-      current: location.pathname.startsWith("/account/pos"),
-      roles: ["CASHIER", "ADMIN", "MANAGER"],
-      children: [
-        {
-          name: t("navigation.pos"),
-          to: "/account/pos",
-          roles: ["CASHIER", "ADMIN", "MANAGER"],
-          current: location.pathname === "/account/pos",
-        },
-        {
-          name: t("navigation.orders"),
-          to: "/account/orders",
-          roles: ["CASHIER", "ADMIN", "MANAGER"],
-          current: location.pathname === "/account/orders",
-        },
-        {
-          name: t("navigation.sales"),
-          to: "/account/sales",
-          roles: ["CASHIER", "ADMIN", "MANAGER"], 
-          current: location.pathname === "/account/sales",
-        },
-      ],
-    },
-    {
-      name: t("navigation.stockMovements"),
-      to: "/account/stock_movement",
-      icon: IconArrowForward,
-      current: location.pathname === "/account/stock_movement",
-      roles: [ "ADMIN", "MANAGER"],
-    },
-    {
-      name: t("navigation.exchangeRate"),
-      to: "/account/rate",
-      icon: IconArrowForward,
-      current: location.pathname === "/account/rate",
-      roles: ["ADMIN"],
-    }
+    // {
+    //   name: t("navigation.categories"),
+    //   to: "/account/category",
+    //   icon: IconListCheck,
+    //   current: location.pathname === "/account/category",
+    //   roles: ["CASHIER", "ADMIN", "MANAGER"],
+    // },
+    // {
+    //   name: t("navigation.products"),
+    //   to: "/account/products",
+    //   icon: IconTag,
+    //   current: location.pathname === "/account/products",
+    //   roles: ["CASHIER", "ADMIN", "MANAGER"],
+    // },
+    // {
+    //   name: t("navigation.pos"),
+    //   to: "",
+    //   icon: IconBarChart,
+    //   current: location.pathname.startsWith("/account/pos"),
+    //   roles: ["CASHIER", "ADMIN", "MANAGER"],
+    //   children: [
+    //     {
+    //       name: t("navigation.pos"),
+    //       to: "/account/pos",
+    //       roles: ["CASHIER", "ADMIN", "MANAGER"],
+    //       current: location.pathname === "/account/pos",
+    //     },
+    //     {
+    //       name: t("navigation.orders"),
+    //       to: "/account/orders",
+    //       roles: ["CASHIER", "ADMIN", "MANAGER"],
+    //       current: location.pathname === "/account/orders",
+    //     },
+    //     {
+    //       name: t("navigation.sales"),
+    //       to: "/account/sales",
+    //       roles: ["CASHIER", "ADMIN", "MANAGER"], 
+    //       current: location.pathname === "/account/sales",
+    //     },
+    //   ],
+    // },
+    // {
+    //   name: t("navigation.stockMovements"),
+    //   to: "/account/stock_movement",
+    //   icon: IconArrowForward,
+    //   current: location.pathname === "/account/stock_movement",
+    //   roles: [ "ADMIN", "MANAGER"],
+    // },
+    // {
+    //   name: t("navigation.exchangeRate"),
+    //   to: "/account/rate",
+    //   icon: IconArrowForward,
+    //   current: location.pathname === "/account/rate",
+    //   roles: ["ADMIN"],
+    // }
   ];
 
   return (
@@ -136,7 +136,7 @@ const Sidebar = () => {
                 <ul>
                   {navigation
                     .filter((item) => item.roles.includes(user.role))
-                    .map((item, index) => (
+                    .map((item:any, index) => (
                       <li key={index} className="nav-item">
                         {!item.children ? (
                           <Link

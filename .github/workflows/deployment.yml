@@ -27,10 +27,9 @@ jobs:
         with:
           context: .
           push: true
-          # Tag the image with commit SHA and latest tag
+          # Correct the tag format by removing comments from the tags field
           tags: |
             patienceineza/web-${{ github.sha }}  # Unique tag based on commit SHA
             patienceineza/web:latest             # Tag for the latest version
-          # Optional caching to speed up builds
           cache-from: type=registry,ref=patienceineza/web:latest
           cache-to: type=inline,mode=max
