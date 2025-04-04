@@ -25,7 +25,7 @@ The app is containerized using Docker and deployed with GitHub Actions, which bu
 - GitHub Actions for CI/CD
 
 ## API Integration
-- The app can use an existing backend API.
+- The app  uses an existing backend API.
 - **Backend URL:** `REACT_APP_SERVER_URL = https://stock-management-be.vercel.app`
 
 ## Setup Instructions
@@ -34,6 +34,19 @@ The app is containerized using Docker and deployed with GitHub Actions, which bu
 - Node.js installed
 - Docker installed (optional)
 - Docker Hub account (if using Docker)
+
+### Initial Admin Account
+ An initial admin account is created automatically during the app's first run if it doesn't already exist in the database. The credentials for the admin account are:
+
+
+### Admin
+ Email: `user@example.com`
+
+ Password: `string`
+### Cashier
+ Email: `johndoe@gmail.com`
+
+ Password: `Password@123`
 
 ### Running Locally (React)
 1. Clone the repository:
@@ -67,7 +80,7 @@ The app is containerized using Docker and deployed with GitHub Actions, which bu
 3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Try It Online  
-If you don't want to install the app locally, you can access the hosted version here:  
+If you don't want to install the app locally, you can access the hosted vercel version here:  
 🔗 **[Live Demo](https://aims-project-virid.vercel.app/)**  
 
 ## Deployment & CI/CD
@@ -83,9 +96,4 @@ A GitHub Actions workflow is configured to:
 2. GitHub Actions will automatically build and push the Docker image.
 3. Deploy the Docker image from Docker Hub to your server or cloud provider.
 
-## License
-This project is open-source and available under the MIT License.
-
----
-For any issues, contributions, or feature requests, feel free to open a GitHub issue.
 

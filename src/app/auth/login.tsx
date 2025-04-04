@@ -26,11 +26,9 @@ const Login: React.FC = () => {
             <div className="bg-white dark:bg-gray-900 shadow-lg rounded-2xl p-8 w-full max-w-md">
                 <div className="text-center">
                     <p className="dark:text-white text-3xl text-primary font-bold">
-                        {t("stockManagement")}
+                        Welcome , Login
                     </p>
-                    <h2 className="mt-6 text-2xl font-bold text-gray-800 dark:text-white">
-                        {t("welcome")}
-                    </h2>
+                  
                 </div>
                 <form className="mt-6 space-y-5" onSubmit={handleSubmit}>
                     <InputField

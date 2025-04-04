@@ -46,7 +46,7 @@ const UserProfile = ({ user }: any) => {
             },
             {
               label: t('profile.status'),
-              value: user?.status ? (
+              value: user?.is_active ? (
                 <span className="badge bg-green-500 text-white rounded-full px-2 py-1 text-xs font-semibold">
                   {t('profile.active')}
                 </span>
