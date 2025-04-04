@@ -27,9 +27,8 @@ jobs:
         with:
           context: .
           push: true
-          # Correct the tag format by removing comments from the tags field
           tags: |
-            patienceineza/web-${{ steps.vars.outputs.commit }}
-            patienceineza/web:latest           
-          cache-from: type=registry,ref=patienceineza/web:latest
-          cache-to: type=inline,mode=max
+            patienceineza/web-${{ github.sha }}  # Unique tag based on commit SHA
+            patienceineza/web:latest             # Tag for the latest version
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
