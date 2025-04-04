@@ -24,8 +24,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      
       - name: Build project
-        run: npm run build -- --no-warnings
+        run: npm run build -- --no-warnings --no-ci
+    
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
