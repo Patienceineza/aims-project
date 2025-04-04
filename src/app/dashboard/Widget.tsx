@@ -553,11 +553,20 @@
 // };
 // export default Reports;
 
+import { isLoggedIn } from '@/hooks/api/auth';
 import React from 'react'
-
 export default function Widget() {
+  const user = isLoggedIn(); 
+
   return (
-    <div>Widget</div>
-  )
+    <div>
+      {user ? (
+        <p>Welcome, {user.firstName} {user.lastName}!</p>
+      ) : (
+        <p>Welcome, Guest!</p>
+      )}
+    </div>
+  );
 }
+
 
