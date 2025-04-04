@@ -2,7 +2,7 @@ FROM node:18-alpine AS builder
 
 ENV NODE_ENV production
 ENV REACT_APP_SERVER_URL https://stock-management-be.vercel.app
-
+ENV REACT_APP_CI =false
 
 # Add a work directory
 WORKDIR /app
