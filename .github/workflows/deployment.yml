@@ -27,5 +27,9 @@ jobs:
         with:
           context: .
           push: true
+          # Correct the tag format by removing comments from the tags field
+          tags: |
+            patienceineza/web-${{ steps.vars.outputs.commit }}
+            patienceineza/web:latest           
           cache-from: type=registry,ref=patienceineza/web:latest
           cache-to: type=inline,mode=max
