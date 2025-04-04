@@ -25,10 +25,9 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./
+          file: ./Dockerfile
           push: true
-          tags: |
-            patienceineza/web:${{ github.sha }}
-            patienceineza/web:latest
-          cache-from: type=registry,ref=patienceineza/web:latest
-          cache-to: type=inline,mode=max
+          tags: patienceineza/patienceineza:latest, patienceineza/patienceineza:${{ github.sha }}
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
